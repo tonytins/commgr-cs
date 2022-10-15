@@ -2,9 +2,9 @@ using ComMgr.Data;
 
 namespace ComMgr.Services;
 
-public class CommissionService
+public class TransactionService
 {
-    private static readonly string[] Descriptions = new[]
+    static readonly string[] Types = new[]
     {
         "YCH", "Adopt", "Commission"
     };
@@ -14,14 +14,14 @@ public class CommissionService
         "Tom Wilcox", "Zack Casey", "Aidan Cheddar", "Kit Welsh", "Zenon Tigerpaw"
     };
 
-    public Task<Commission[]> GetOrdersAsync()
+    public Task<Transaction[]> GetTransactionsAsync()
     {
-        return Task.FromResult(Enumerable.Range(1, 5).Select(index => new Commission
+        return Task.FromResult(Enumerable.Range(1, 10).Select(index => new Transaction
         {
             PurchaseDate = DateTime.Now.AddDays(Random.Shared.Next(10, 30)),
             Price = Random.Shared.Next(2, 200),
             Buyer = Buyers[Random.Shared.Next(Buyers.Length)],
-            Description = Descriptions[Random.Shared.Next(Descriptions.Length)]
+            Type = Types[Random.Shared.Next(Types.Length)]
         }).ToArray());
     }
 }

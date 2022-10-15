@@ -22,7 +22,7 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
-        builder.Services.AddSingleton<CommissionService>();
+        builder.Services.AddSingleton<TransactionService>();
 
         return builder.Build();
     }

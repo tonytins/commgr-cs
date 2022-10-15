@@ -1,10 +1,10 @@
 ﻿@page "/transactions"
 
-@inject CommissionService OrderService
+@inject TransactionService TransactionService
 
 <h1>Transactions</h1>
 
-@if (orders == null)
+@if (transactions == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -20,32 +20,32 @@ else
         </tr>
     </thead>
     <tbody>
-        @foreach (var orders in orders)
+        @foreach (var orders in transactions)
             {
                 <tr>
                     <td>@orders.PurchaseDate.ToShortDateString()</td>
                     <td>$@orders.Price</td>
                     <td>@orders.Buyer</td>
-                    <td>@orders.Description</td>
+                    <td>@orders.Type</td>
                 </tr>
             }
         </tbody>
     </table>
 }
 
-<p>Revnue: $@Sum</p>
+<p>Revnue: $@Revnue</p>
 
 @code {
-    Commission[] orders;
-    int Sum { get; set; }
+    Transaction[] transactions;
+    int Revnue { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        orders = await OrderService.GetOrdersAsync();
+        transactions = await TransactionService.GetTransactionsAsync();
 
-        foreach (var order in orders)
+        foreach (var transaction in transactions)
         {
-            Sum += order.Price;
+            Revnue += transaction.Price;
         }
 
     }

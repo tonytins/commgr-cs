@@ -1,6 +1,6 @@
 namespace ComMgr.Data;
 
-public interface IAuction : IOrder
+public interface IAuction : ITransaction
 {
     public int StartBid { get; set; }
 

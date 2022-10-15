@@ -1,6 +1,6 @@
 namespace ComMgr.Data;
 
-public class Commission : IOrder
+public class Commission : ITransaction
 {
     public string Name { get; set; }
     public string Buyer { get; set; }
