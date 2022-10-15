@@ -1,0 +1,52 @@
+﻿@page "/transactions"
+
+@inject CommissionService OrderService
+
+<h1>Transactions</h1>
+
+@if (orders == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Buyer</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var orders in orders)
+            {
+                <tr>
+                    <td>@orders.PurchaseDate.ToShortDateString()</td>
+                    <td>$@orders.Price</td>
+                    <td>@orders.Buyer</td>
+                    <td>@orders.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<p>Revnue: $@Sum</p>
+
+@code {
+    Commission[] orders;
+    int Sum { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        orders = await OrderService.GetOrdersAsync();
+
+        foreach (var order in orders)
+        {
+            Sum += order.Price;
+        }
+
+    }
+}
