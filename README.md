@@ -1,6 +1,10 @@
 # Commission Manager
 
-Commission Manager is a desktop application keeping track of commission and YCH transactions. The information can later be imported into databases or modified externally from a spreadsheet program. Contribution to the project is most welcome.
+![](./screenshot.png)
+
+Commission Manager is a desktop application keeping track of commission and YCH transactions. The information can later be imported into databases or modified externally from a spreadsheet program.
+
+This is still a major work in progress. Contribution to the project is most welcome.
 
 ## Requirements
 
