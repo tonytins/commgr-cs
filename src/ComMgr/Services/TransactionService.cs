@@ -21,7 +21,8 @@ public class TransactionService
             PurchaseDate = DateTime.Now.AddDays(Random.Shared.Next(10, 30)),
             Price = Random.Shared.Next(2, 200),
             Buyer = Buyers[Random.Shared.Next(Buyers.Length)],
-            Type = Types[Random.Shared.Next(Types.Length)]
+            Type = Types[Random.Shared.Next(Types.Length)],
+            Description = $"{Types[Random.Shared.Next(Types.Length)]} for {Buyers[Random.Shared.Next(Buyers.Length)]}"
         }).ToArray());
     }
 }

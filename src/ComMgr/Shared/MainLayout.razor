@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
+<div class="page  @(_darkMode ? "bg-dark text-white alert-dark link-light btn-light table-light navbar-dark" : "")">
     <div class="sidebar">
         <NavMenu />
     </div>
@@ -10,6 +10,7 @@
             <NavLink href="about">
                 About
             </NavLink>
+            <ThemeToggle OnDarkModeToggled="@HandleDarkModeToggled" />
         </div>
 
         <article class="content px-4">
@@ -17,3 +18,12 @@
         </article>
     </main>
 </div>
+
+@code {
+    bool _darkMode = false;
+
+    void HandleDarkModeToggled(bool isDarkMode)
+    {
+        _darkMode = isDarkMode;
+    }
+}

@@ -40,10 +40,17 @@
 @code {
     private bool collapseNavMenu = true;
 
+    bool _darkMode = false;
+
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    void HandleDarkModeToogled(bool isDarkMode)
+    {
+        _darkMode = isDarkMode;
     }
 }

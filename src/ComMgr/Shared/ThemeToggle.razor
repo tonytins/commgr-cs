@@ -1,0 +1,14 @@
+<button @onclick="Toggle">Dark Mode</button>
+
+@code {
+    bool _darkMode = false;
+
+    [Parameter]
+    public EventCallback<bool> OnDarkModeToggled { get; set; }
+
+    void Toggle()
+    {
+        _darkMode = !_darkMode;
+        OnDarkModeToggled.InvokeAsync(_darkMode);
+    }
+}
