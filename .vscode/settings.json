@@ -1,3 +1,4 @@
 {
-  "spellchecker.ignoreWordsList": ["Todo"]
+  "spellchecker.ignoreWordsList": ["Todo"],
+  "Lua.diagnostics.globals": ["import", "database", "ych"]
 }
