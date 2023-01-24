@@ -1,5 +1,5 @@
-﻿using Terminal.Gui;
-using ComManager;
+﻿using ComManager;
+using Terminal.Gui;
 
 Application.Run<MainWindow>();
 

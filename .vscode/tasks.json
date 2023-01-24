@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/src/ComMgr/ComMgr.csproj",
+        "${workspaceFolder}/src/ComManager/ComManager.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -21,82 +21,10 @@
         "dotnet",
         "workload",
         "restore",
-        "${workspaceFolder}/src/ComMgr/ComMgr.csproj",
+        "${workspaceFolder}/src/ComManager/ComManager.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary",
         "--ignore-failed-sources"
-      ],
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "run (macOS)",
-      "command": "dotnet",
-      "type": "process",
-      "args": [
-        "build",
-        "-t:Run",
-        "-f",
-        "net7.0-maccatalyst",
-        "${workspaceFolder}/src/ComMgr/ComMgr.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "run (iOS)",
-      "command": "dotnet",
-      "type": "process",
-      "args": [
-        "build",
-        "-t:Run",
-        "-f",
-        "net7.0-ios",
-        "${workspaceFolder}/src/ComMgr/ComMgr.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "run (Android)",
-      "command": "dotnet",
-      "type": "process",
-      "args": [
-        "build",
-        "-t:Run",
-        "-f",
-        "net7.0-android",
-        "${workspaceFolder}/src/ComMgr/ComMgr.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "run (Windows)",
-      "command": "dotnet",
-      "type": "process",
-      "args": [
-        "build",
-        "-t:Run",
-        "-f",
-        "net7.0-windows",
-        "${workspaceFolder}/src/ComMgr/ComMgr.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "publish",
-      "command": "dotnet",
-      "type": "process",
-      "args": [
-        "publish",
-        "${workspaceFolder}/src/ComMgr/ComMgr.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
     },
@@ -108,8 +36,15 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/src/ComMgr/ComMgr.csproj"
+        "${workspaceFolder}/src/ComManager/ComManager.csproj"
       ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": ["format", "${workspaceFolder}/src/ComManager.sln"],
       "problemMatcher": "$msCompile"
     }
   ]

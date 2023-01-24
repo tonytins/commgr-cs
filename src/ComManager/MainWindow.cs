@@ -32,9 +32,8 @@ public class MainWindow : Window
 	{
 	  X = Pos.Left(typeLabel) + 1,
 	  Y = Pos.Bottom(nameText),
-	  Width = Dim.Fill(2)
+	  Width = Dim.Fill(2),
 	};
-
 	typeInput.SetSource(items);
 
 	Add(nameLabel, nameText, typeLabel, typeInput);
